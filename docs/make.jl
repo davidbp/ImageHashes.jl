@@ -1,6 +1,8 @@
 using ImageHashes
 using Documenter
 
+push!(LOAD_PATH,"../src/")
+
 DocMeta.setdocmeta!(ImageHashes, :DocTestSetup, :(using ImageHashes); recursive=true)
 
 makedocs(;
@@ -15,9 +17,13 @@ makedocs(;
         assets=String[],
     ),
     pages=[
-        "Home" => "index.md",
+        "Introduction" => "index.md",
+        "Hashes" => [
+            "average_hash.md",
+        ],
     ],
 )
+
 
 deploydocs(;
     repo="github.com/davidbp/ImageHashes.jl",
