@@ -10,12 +10,6 @@ function preprocess_image(image, n_size_side)
     return img_resized_gray
 end
 
-"""
-This function simply checks if a given position has lower value than the one in its right
-```
-bit_matrix = img_resized_gray[:, 2:end] .> mean_image_intensity[:, 1:end-1]
-```
-"""
 function check_rightcol_bigger_than_leftcol(X)
     
     n_rows, n_cols = size(X)
