@@ -20,6 +20,7 @@ makedocs(;
         "Introduction" => "index.md",
         "Hashes" => [
             "average_hash.md",
+            "difference_hash.md"
         ],
     ],
 )

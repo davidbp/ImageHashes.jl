@@ -1,4 +1,10 @@
+module AverageHash
+
 using Images
+using Statistics
+
+export average_mathash, average_hash
+
 
 function preprocess_image(image, n_size_side)
     img_resized = imresize(image, n_size_side, n_size_side)
@@ -41,4 +47,5 @@ function average_hash_slow(image, n_size_side=8)
     bit_matrix = average_mathash(image, n_size_side)
     hash = reinterpret_bits_as_int(bit_matrix)
     return hash
+end
 end

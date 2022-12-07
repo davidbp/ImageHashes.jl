@@ -7,6 +7,8 @@ using TestImages
 @testset "Test Average hash" begin
     img = testimage("fabio_color_512.png");    
 
+    #import ImageHashes.AverageHash.average_mathash
+
     img_h1 = average_mathash(img)
     @test size(img_h1) == (8, 8)
     @test eltype(img_h1) == Bool
@@ -46,5 +48,20 @@ end
     end
     
 end
+
+@testset "Test Difference hash" begin
+    img = testimage("fabio_color_512.png");    
+
+    #import ImageHashes.DifferenceHash.difference_mathash
+
+    img_h1 = difference_mathash(img)
+    @test size(img_h1) == (9, 8)
+    @test eltype(img_h1) == Bool
+
+    img_h2 = difference_mathash(img, 16)
+    @test size(img_h2) == (17, 16)
+    @test eltype(img_h2) == Bool
+end
+
 
 end

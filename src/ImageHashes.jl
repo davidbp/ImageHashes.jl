@@ -11,6 +11,9 @@ module ImageHashes
     # hash.jl
     average_hash, average_mathash,
 
+    # difference_hashing.jl
+    difference_hash, difference_mathash,
+    
     # distances.jl
     hamming_bitwise,
 
@@ -18,8 +21,12 @@ module ImageHashes
     reinterpret_bits_as_int
 
     ## source files
-    include("hash.jl")
-    
+    include("average_hash.jl")
+    using .AverageHash
+
+    include("difference_hash.jl")
+    using .DifferenceHash
+
     include("distances.jl")
 
     include("utils.jl")
