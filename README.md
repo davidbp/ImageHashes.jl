@@ -6,7 +6,7 @@
 [![Coverage](https://codecov.io/gh/davidbp/ImageHashes.jl/branch/main/graph/badge.svg)](https://codecov.io/gh/davidbp/ImageHashes.jl)
 
 
-ImageHashes implements image hashing algorithms to perform near-duplication.
+ImageHashes implements image hashing algorithms to perform near-duplication detection.
 
 
 #### Example:
