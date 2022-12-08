@@ -11,7 +11,7 @@ ImageHashes implements image hashing algorithms to perform near-duplication.
 
 #### Example:
 
-```
+```julia
 using TestImages, ImageHashes
 img = testimage("fabio_color_256.png");
 img_hash = difference_hash(img)
