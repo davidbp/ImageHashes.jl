@@ -2,9 +2,6 @@ module ImageHashes
 
     using Statistics
 
-    # Good reference package https://github.com/JohannesBuchner/imagehash
-    # Good material https://www.hackerfactor.com/blog/index.php?/archives/432-Looks-Like-It.html
-
     ## exports
     export 
 
