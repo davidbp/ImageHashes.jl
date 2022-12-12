@@ -27,6 +27,5 @@ makedocs(;
 
 
 deploydocs(;
-    repo="github.com/davidbp/ImageHashes.jl",
-    devbranch="main",
+    repo="github.com/davidbp/ImageHashes.jl.git",
 )
