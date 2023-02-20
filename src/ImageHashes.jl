@@ -11,6 +11,9 @@ module ImageHashes
     # difference_hashing.jl
     difference_hash, difference_mathash,
     
+    # difference_hashing.jl
+    perceptual_hash, perceptual_mathash,
+    
     # distances.jl
     hamming_bitwise,
 
@@ -23,6 +26,9 @@ module ImageHashes
 
     include("difference_hash.jl")
     using .DifferenceHash
+
+    include("perceptual_hash.jl")
+    using .PerceptualHash
 
     include("distances.jl")
 

@@ -37,6 +37,8 @@ https://github.com/JohannesBuchner/imagehash
 Good related material can be found in 
 - https://github.com/JohannesBuchner/imagehash
 - https://www.hackerfactor.com/blog/index.php?/archives/432-Looks-Like-It.html
+- https://erdogant.github.io/undouble/pages/html/hash_functions.html
+- https://content-blockchain.org/research/testing-different-image-hash-functions/
 
 ```@index
 

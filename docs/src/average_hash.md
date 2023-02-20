@@ -47,11 +47,19 @@ mat_hash = average_mathash(img, 28)
 Gray.(mat_hash)
 ```
 
-A hash (vector hash) for an image can be created with
+A hash (vector hash) for an image can be created with the `average_hash` function.
 
 ```@example
 using TestImages, ImageHashes
 img = testimage("fabio_color_256.png");
 img_hash = average_hash(img, 8)
 img_hash
+```
+
+#### Execution time and allocations
+
+```@example
+using TestImages, ImageHashes, BenchmarkTools
+img = testimage("fabio_color_256.png");
+@benchmark average_hash($img, 8)
 ```
