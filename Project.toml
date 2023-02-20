@@ -1,7 +1,7 @@
 name = "ImageHashes"
 uuid = "4e842e0a-c737-477c-a320-5a4e4980a4a4"
 authors = ["David Buchaca Prats"]
-version = "0.1.1"
+version = "0.1.2"
 
 [deps]
 BenchmarkTools = "6e4b80f9-dd63-53aa-95a3-0cdb28fa8baf"
