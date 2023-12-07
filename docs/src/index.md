@@ -20,9 +20,24 @@ to get
 
 ```
 BENCHMARK RESULTS
-time taken to compute a hash: 1.216701e-6 seconds
-Hashes per second: 821895
-time taken to compute 1 billion hash distances: 0.57279325 seconds
+time taken to compute a hash: 8.4834e-5 seconds
+Hashes per second: 11788
+time taken to compute 100000000  hash distances: 0.53851791 seconds
+```
+
+There is an equivalent benchmark in Python using 
+
+```
+https://github.com/JohannesBuchner/imagehash
+```
+
+which produces 
+
+```
+BENCHMARK RESULTS
+time taken to compute a hash: 0.010337230000000001 seconds
+Hashes per second: 97
+time taken to compute 100000000 hamming hash distances : 238.037 seconds
 ```
 
 
