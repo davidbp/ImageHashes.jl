@@ -20,9 +20,9 @@ to get
 
 ```
 BENCHMARK RESULTS
-time taken to compute a hash: 8.4834e-5 seconds
-Hashes per second: 11788
-time taken to compute 100000000  hash distances: 0.53851791 seconds
+time taken to compute a hash using difference_hash : 1.28e-6 seconds
+Hashes per second: 781645
+time taken to compute 100000000 hash distances: 0.531 seconds
 ```
 
 There is an equivalent benchmark in Python using 
@@ -35,9 +35,9 @@ which produces
 
 ```
 BENCHMARK RESULTS
-time taken to compute a hash: 0.010337230000000001 seconds
-Hashes per second: 97
-time taken to compute 100000000 hamming hash distances : 238.037 seconds
+time taken to compute a hash using dhash: 0.004 seconds
+Hashes per second: 250
+time taken to compute 100000000 hash distances: 242.927 seconds
 ```
 
 
