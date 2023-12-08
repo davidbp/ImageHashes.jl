@@ -61,5 +61,6 @@ img_hash
 ```@example
 using TestImages, ImageHashes, BenchmarkTools
 img = testimage("fabio_color_256.png");
-@benchmark average_hash($img, 8)
+benchmark = @benchmark average_hash($img, 8)
+benchmark
 ```

@@ -61,6 +61,7 @@ img_hash
 ```@example
 using TestImages, ImageHashes, BenchmarkTools
 img = testimage("fabio_color_256.png");
-@benchmark perceptual_hash($img, 8)
+benchmark = @benchmark perceptual_hash($img, 8)
+benchmark
 ```
 
