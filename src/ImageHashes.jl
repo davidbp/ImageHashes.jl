@@ -1,37 +1,22 @@
 module ImageHashes
 
-    using Statistics
+using Images
+using Statistics
+using FFTW
 
-    ## exports
-    export 
+include("utils.jl")
+include("distances.jl")
+include("hashing/average.jl")
+include("hashing/difference.jl")
+include("hashing/perceptual.jl")
 
-    # hash.jl
-    average_hash, average_mathash,
+export average_hash
+export average_mathash
+export difference_hash
+export difference_mathash
+export perceptual_hash
+export perceptual_mathash
+export hamming_bitwise
+export reinterpret_bits_as_int
 
-    # difference_hashing.jl
-    difference_hash, difference_mathash,
-    
-    # difference_hashing.jl
-    perceptual_hash, perceptual_mathash,
-    
-    # distances.jl
-    hamming_bitwise,
-
-    # utils.jl
-    reinterpret_bits_as_int
-
-    ## source files
-    include("average_hash.jl")
-    using .AverageHash
-
-    include("difference_hash.jl")
-    using .DifferenceHash
-
-    include("perceptual_hash.jl")
-    using .PerceptualHash
-
-    include("distances.jl")
-
-    include("utils.jl")
-
-end # module ImageHashes
+end
