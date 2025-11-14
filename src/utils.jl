@@ -19,7 +19,6 @@ end
 """
     init_hash_container(n_bits::Int)
 
-
 Choose the proper variable type for the variable storing the resulting hash based on `n_bits` of
 the input..
 """
@@ -52,7 +51,7 @@ Resize an image to the target `size` and convert it to grayscale.
 - If `func` is `nothing`: the resized grayscale image.
 - Otherwise: a tuple `(img_resized_gray, func(img_resized_gray))`.
 """
-function _preprocess_image(image, size::Union{Int, Tuple{Int, Int}}; func::Union{Function,Nothing} = nothing)
+function _preprocess_image(image, size::Union{Int, Tuple{Int, Int}}; func::Union{Function, Nothing} = nothing)
     target_size = size isa Int ? (size, size) : size
     img_resized = imresize(image, target_size)
     img_resized_gray = Gray.(img_resized)
