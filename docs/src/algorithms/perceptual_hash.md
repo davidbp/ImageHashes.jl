@@ -46,13 +46,13 @@ Gray.(mat_hash)
 The bigger the matrix hash is, the higher quality it can achive.
 
 ```@example A
-mat_hash = perceptual_mathash(img, 28)
+mat_hash = perceptual_mathash(img, 32)
 Gray.(mat_hash)
 ```
 
 ## Performance
 
 ```@repl A
-img = testimage("coffee.pnge");
+img = testimage("coffee.png");
 @benchmark perceptual_hash($img, 8)
 ```

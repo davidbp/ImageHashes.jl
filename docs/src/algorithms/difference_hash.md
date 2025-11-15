@@ -29,7 +29,7 @@ using TestImages, Images, ImageHashes
 img = testimage("coffee.png")
 ```
 
-An difference mat hash (matrix hash) can be created using `difference_mathash(image, size)`, as follows:
+An difference mat hash (matrix hash) can be created using [`difference_mathash(image, size)`](@ref), as follows:
 
 ```@repl A
 mat_hash = difference_mathash(img, 8)

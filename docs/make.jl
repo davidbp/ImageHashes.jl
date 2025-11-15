@@ -1,21 +1,13 @@
-using ImageHashes
+using Pkg
 using Documenter
+using ImageHashes
 
-push!(LOAD_PATH,"../src/")
-
-DocMeta.setdocmeta!(ImageHashes, :DocTestSetup, :(using ImageHashes); recursive=true)
 
 makedocs(;
+    warnonly=true,
     modules=[ImageHashes],
-    authors="David Buchaca Prats <davidbuchaca@gmail.com> and contributors",
-    repo="https://github.com/davidbp/ImageHashes.jl/blob/{commit}{path}#{line}",
     sitename="ImageHashes.jl",
-    format=Documenter.HTML(;
-        prettyurls=get(ENV, "CI", "false") == "true",
-        canonical="https://davidbp.github.io/ImageHashes.jl",
-        edit_link="main",
-        assets=String[],
-    ),
+    authors="David Buchaca Prats <davidbuchaca@gmail.com> and contributors",
     pages=[
          "Introduction" => "index.md",
          "Hashing Algorithms" => [

@@ -15,7 +15,7 @@ The average hash vector for an image would be the flattenend matrix of step (4).
 
 ## Quickstart
 
-A hash (vector hash) for an image can be created with the `average_hash` function.
+A hash (vector hash) for an image can be created with the [`average_hash`](@ref) function.
 
 ```@repl
 using TestImages, ImageHashes
@@ -33,7 +33,7 @@ using TestImages, Images, ImageHashes
 img = testimage("coffee.png")
 ```
 
-An average mat hash (matrix hash) can be created using `average_hash(image, size)`, as follows:
+An average mat hash (matrix hash) can be created using [`average_mathash(image, size)`](@ref), as follows:
 
 ```@repl A
 mat_hash = average_mathash(img, 8)
