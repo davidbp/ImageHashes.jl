@@ -16,7 +16,7 @@ Difference hashing is based on four steps:
 ```@repl
 using TestImages, ImageHashes
 img = testimage("coffee.png");
-img_hash = difference_hash(img, 8)
+img_hash = difference_hash(img)
 typeof(img_hash)
 ```
 

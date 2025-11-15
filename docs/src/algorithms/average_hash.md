@@ -20,7 +20,7 @@ A hash (vector hash) for an image can be created with the `average_hash` functio
 ```@repl
 using TestImages, ImageHashes
 img = testimage("coffee.png");
-img_hash = average_hash(img, 8)
+img_hash = average_hash(img)
 typeof(img_hash)
 ```
 
