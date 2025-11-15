@@ -1,19 +1,31 @@
 """
-    _difference_hash_matrix(image, n_size_side::Int; orientation=:vertical)
+    difference_mathash(image, n_size_side::Int = 8; orientation = :horizontal)
 
-Compute the boolean bit matrix for difference hash.
+Compute a `BitMatrix` representing the adjacent–pixel intensity
+comparisons used by the difference hash (dHash) algorithm.
 
-- `orientation = :vertical`: compares columns (resize to `(n_size_side, n_size_side+1)`), result `(n_size_side, n_size_side)`.
-- `orientation = :horizontal`:  compares rows (resize to `(n_size_side+1, n_size_side)`), result `(n_size_side, n_size_side)`.
+# Arguments
+- `image`: The input image.
+- `n_size_side`: The side length of the final hash matrix (default = `8`).
+- `orientation`:
+  - `:horizontal`: compare pixels from left to right (default).
+  - `:vertical`: compare pixels from top to bottom.
+
+# Returns
+A `BitMatrix` where each entry indicates whether the neighboring pixel in the comparison
+direction has greater intensity than the current pixel. The `size` of the resulting matrix
+depends on provided `orientation`:
+- `horizontal`: `(n_size_side + 1, n_size_side)`
+- `vertical`: `(n_size_side, n_size_side + 1)`
 """
-function _difference_hash_matrix(image, n_size_side::Int; orientation::Symbol = :horizontal)
+function difference_mathash(image, n_size_side::Int = 8; orientation::Symbol = :horizontal) :: BitMatrix
 
     img_resized_gray = if orientation == :horizontal
         _preprocess_image(image, (n_size_side + 1, n_size_side))
     elseif orientation == :vertical
         _preprocess_image(image, (n_size_side, n_size_side + 1))
     else
-        throw(ArgumentError("orientation must be :vertical or :horizontal"))
+        throw(ArgumentError("orientation must be :vertical or :horizontal, got $orientation"))
     end
 
     n_rows, n_cols = size(img_resized_gray)
@@ -37,23 +49,24 @@ end
 
 
 """
-    difference_mathash(image, n_size_side::Int=8; orientation=:horizontal)
+    difference_hash(image, n_size_side::Int = 8; orientation::Symbol = :horizontal)
 
-Return the difference hash as a `BitMatrix`.
+Compute the ifference hash (dHash) of an image and return it as a compact
+integer value.
 
-- By default, uses `orientation=:horizontal` to match test expectations.
-"""
-difference_mathash(image, n_size_side::Int = 8; orientation::Symbol = :horizontal) =
-    _difference_hash_matrix(image, n_size_side; orientation)
+# Arguments
+- `image`: Input image to hash.
+- `n_size_side`: Side length of the square region used for hashing (default = `8`, producing a 64-bit hash).
+- `orientation`: orientation to apply the difference hash.
+  - `:horizontal`: compares pixels from left to right (default).  
+  - `:vertical`: compares pixels from top to bottom.
 
-
-"""
-    difference_hash(image, n_size_side::Int=8; orientation=:horizontal)
-
-Return the difference hash as a compact integer.
+# Returns
+A compact integer hash value whose bit pattern corresponds to the dHash
+comparison matrix. For `n_size_side = 8`, the result fits in a `UInt64`.
 """
 function difference_hash(image, n_size_side::Int = 8; orientation::Symbol = :horizontal)
-    bit_matrix = _difference_hash_matrix(image, n_size_side; orientation)
+    bit_matrix = difference_mathash(image, n_size_side; orientation)
     z = init_hash_container(length(bit_matrix))
 
     @inbounds for b in bit_matrix
