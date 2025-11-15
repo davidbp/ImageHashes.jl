@@ -17,12 +17,13 @@ makedocs(;
         assets=String[],
     ),
     pages=[
-        "Introduction" => "index.md",
-        "Hashes" => [
-            "average_hash.md",
-            "difference_hash.md",
-            "perceptual_hash.md"
-        ],
+         "Introduction" => "index.md",
+         "Hashing Algorithms" => [
+             "algorithms/average_hash.md",
+             "algorithms/difference_hash.md",
+             "algorithms/perceptual_hash.md"
+         ],
+         "API Reference" => "api.md",
     ],
 )
 

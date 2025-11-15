@@ -2,13 +2,14 @@
 CurrentModule = ImageHashes
 ```
 
-# ImageHashes package
+# ImageHashes.jl
 
-*ImageHashes.jl* is a Julia package for image hashing.
-It covers various techniques to simplify the task of finding **exact** and **near duplicates** in an image collection, among other applications.
+*ImageHashes.jl* is a Julia package for image hashing. It covers various techniques to simplify
+the task of finding **exact** and **near duplicates** in an image collection, among other applications.
 
+## Getting Started
 
-### Benchmark
+## Benchmark
 
 The package provides basic benchmarks in `benchmarks/benchmark.jl `. One can run 
 
@@ -62,5 +63,3 @@ Good related material can be found in
 ```@autodocs
 Modules = [ImageHashes]
 ```
-
-
