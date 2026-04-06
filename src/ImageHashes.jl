@@ -9,6 +9,7 @@ include("distances.jl")
 include("hashing/average.jl")
 include("hashing/difference.jl")
 include("hashing/perceptual.jl")
+include("hashing/block_hash.jl")
 
 export average_hash
 export average_mathash
@@ -16,6 +17,8 @@ export difference_hash
 export difference_mathash
 export perceptual_hash
 export perceptual_mathash
+export block_mathash
+export block_hash
 export hamming_bitwise
 export reinterpret_bits_as_int
 

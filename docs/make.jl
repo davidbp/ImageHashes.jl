@@ -21,7 +21,8 @@ makedocs(;
         "Hashes" => [
             "average_hash.md",
             "difference_hash.md",
-            "perceptual_hash.md"
+            "perceptual_hash.md",
+            "block_hash.md"
         ],
     ],
 )
